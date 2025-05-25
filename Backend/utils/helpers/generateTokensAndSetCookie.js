@@ -6,10 +6,12 @@ const generateTokensAndSetCookie = (userId, res) =>{
     })
 
     res.cookie("jwt", token, {
-        httpOnly: true, //This cookie cannot be accessed by browser
-        maxAge : 15 * 24 * 60 * 60 * 1000, //15 days
-        sameSite: "none" // for prod. && //"strict", for localhost //CSRF
-    })
+  httpOnly: true,
+  maxAge: 15 * 24 * 60 * 60 * 1000,
+  sameSite: process.env.NODE_ENV === "production" ? "none" : "strict",
+  secure: process.env.NODE_ENV === "production"
+});
+
 
     return token;
 
