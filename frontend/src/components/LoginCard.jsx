@@ -43,6 +43,8 @@ export default function SignupCard() {
         headers: {
           "Content-Type": "application/json"
         },
+        credentials: "include",
+        //this is important to send cookies with the request
         body: JSON.stringify(input)
       })
 
