@@ -29,12 +29,12 @@ const UserPage = () => {
           
 
           if(data.error){
-            toast({
-              title: "Error",
-              description: "Error in fetching user posts",
-              isClosable: true,
-              status: "error"
-            })
+// toast({
+//               title: "Error",
+//               description: "Error in fetching user posts",
+//               isClosable: true,
+//               status: "error"
+//             })
           }
 
           //console.log("data ", data);
@@ -43,10 +43,10 @@ const UserPage = () => {
         } catch (error) {
 
           toast({
-              title: "Error",
-              description: "Error in fetching user posts",
-              isClosable: true,
-              status: "error"
+              // title: "Error",
+              // description: "Error in fetching user posts",
+              // isClosable: true,
+              // status: "error"
             })
 
         }
