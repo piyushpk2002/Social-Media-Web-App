@@ -29,6 +29,8 @@ const UserPage = () => {
           
 
           if(data.error){
+            console.log("error in fetching user posts");
+            
 // toast({
 //               title: "Error",
 //               description: "Error in fetching user posts",
@@ -41,6 +43,8 @@ const UserPage = () => {
           setUserPosts(data);
           
         } catch (error) {
+          console.log("error in fetching user posts");
+          
 
           // toast({
           //     // title: "Error",
