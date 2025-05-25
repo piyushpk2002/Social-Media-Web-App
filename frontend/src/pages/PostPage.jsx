@@ -37,12 +37,12 @@ const PostPage = () => {
         //console.log(data);
 
         if (data.error) {
-          toast({
-            title: "Error",
-            description: "Error in fetching post",
-            status: "error",
-            isClosable: true
-          })
+          // toast({
+          //   title: "Error",
+          //   description: "Error in fetching post",
+          //   status: "error",
+          //   isClosable: true
+          // })
           return
         }
 
@@ -51,12 +51,12 @@ const PostPage = () => {
       } catch (error) {
         console.log(error);
 
-        toast({
-          title: "Error",
-          description: "error in fetching post",
-          status: "error",
-          isClosable: true
-        })
+        // toast({
+        //   title: "Error",
+        //   description: "error in fetching post",
+        //   status: "error",
+        //   isClosable: true
+        // })
 
       }
     }
@@ -85,21 +85,21 @@ const PostPage = () => {
         console.log(data);
 
         if(data.error){
-            toast({
-                title: "Error",
-                description: "Error in deleting post",
-                isClosable: true,
-                status: "error"
-            })
+            // toast({
+            //     title: "Error",
+            //     description: "Error in deleting post",
+            //     isClosable: true,
+            //     status: "error"
+            // })
             return;
         }
 
-        toast({
-            title: "Successfully Deleted",
-            description: "Post Deleted Successfully",
-            isClosable: true,
-            status: "success"
-        })
+        // toast({
+        //     title: "Successfully Deleted",
+        //     description: "Post Deleted Successfully",
+        //     isClosable: true,
+        //     status: "success"
+        // })
 
 
         navigate(`/${user.username}`)
@@ -107,12 +107,12 @@ const PostPage = () => {
     } catch (error) {
         console.log(error);
         
-        toast({
-            title: "Error",
-            description: "Error in deleting post",
-            isClosable: true,
-            status: "error"
-        })
+        // toast({
+        //     title: "Error",
+        //     description: "Error in deleting post",
+        //     isClosable: true,
+        //     status: "error"
+        // })
     }
 }
 
