@@ -6,7 +6,7 @@ const useGetUserProfile = () => {
   const [user, setUser] = useState(null)
   const [loading, setLoading] = useState(true)
   const {username} = useParams(); 
-  const toast = useToast();
+  //const toast = useToast();
 
   useEffect(() => {
     const getUser = async () => {
@@ -16,12 +16,12 @@ const useGetUserProfile = () => {
            // console.log("data: ", data);
 
             if(data.error){
-                toast({
-                    title: "Error",
-                    description: "error in fetching user",
-                    isClosable: true,
-                    status: "error"
-                })
+                // toast({
+                //     title: "Error",
+                //     description: "error in fetching user",
+                //     isClosable: true,
+                //     status: "error"
+                // })
                 return;
             }
             setUser(data);
@@ -29,12 +29,12 @@ const useGetUserProfile = () => {
         } catch (error) {
             console.log("error in fetching user profile");
             
-            toast({
-                title: "Error",
-                description: "error in fetching user",
-                isClosable: true,
-                status:"error"
-            })
+            // toast({
+            //     title: "Error",
+            //     description: "error in fetching user",
+            //     isClosable: true,
+            //     status:"error"
+            // })
             setUser(null)
         }
     }
