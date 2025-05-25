@@ -10,7 +10,7 @@ const Logout = () => {
     const handleLogout = async () => {
 
         try {
-            const res = await fetch("/api/users/logout", {
+            const res = await fetch(`${import.meta.env.VITE_API_URL}/api/users/logout`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -21,7 +21,7 @@ const Logout = () => {
             if(data.error){
                 toast({
                     title: "Error",
-                    description: data.error,
+                    description: "Error in logging out",
                     status: "error",
                     isClosable: true
                 })
