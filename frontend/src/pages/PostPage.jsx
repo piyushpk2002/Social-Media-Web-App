@@ -87,7 +87,7 @@ const PostPage = () => {
         if(data.error){
             toast({
                 title: "Error",
-                description: data.error,
+                description: "Error in deleting post",
                 isClosable: true,
                 status: "error"
             })
@@ -109,7 +109,7 @@ const PostPage = () => {
         
         toast({
             title: "Error",
-            description: error,
+            description: "Error in deleting post",
             isClosable: true,
             status: "error"
         })
