@@ -13,7 +13,7 @@ const useGetUserProfile = () => {
         try {
             const res = await fetch(`${import.meta.env.VITE_API_URL}/api/users/getProfile/${username}`);
             const data = await res.json();
-           // console.log("data: ", data);
+            console.log("data: ", data);
 
             if(data.error){
                 // toast({
