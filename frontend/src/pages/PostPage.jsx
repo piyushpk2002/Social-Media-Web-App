@@ -20,7 +20,7 @@ const PostPage = () => {
   const [post, SetPost] = useRecoilState(postAtom);
   const { pid } = useParams();
   const currentUser = useRecoilValue(userAtom);
-  const toast = useToast();
+  //const toast = useToast();
   const navigate = useNavigate();
 
   const currentPost = post[0]
@@ -37,6 +37,8 @@ const PostPage = () => {
         //console.log(data);
 
         if (data.error) {
+          console.log("error in fetching post");
+          
           // toast({
           //   title: "Error",
           //   description: "Error in fetching post",
@@ -85,6 +87,8 @@ const PostPage = () => {
         console.log(data);
 
         if(data.error){
+          console.log("error in deleting post");
+          
             // toast({
             //     title: "Error",
             //     description: "Error in deleting post",

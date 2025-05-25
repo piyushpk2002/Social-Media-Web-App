@@ -47,6 +47,8 @@ const UserHeader = ({user}) => {
                 const data = await res.json();
 
                 if(data.error){
+                    console.log("error in following/unfollowing user");
+                    
                     // toast({
                     //     title: "Error",
                     //     description: "Error in following/unfollowing user",
@@ -62,12 +64,12 @@ const UserHeader = ({user}) => {
             } catch (error) {
                 console.log(error);
                 
-                toast({
-                    // title: "Error",
-                    // description: "error",
-                    // status: "error",
-                    // isClosable: true
-                })
+                // toast({
+                //     // title: "Error",
+                //     // description: "error",
+                //     // status: "error",
+                //     // isClosable: true
+                // })
             }finally {setUpdating(false)}
     }
     
@@ -76,13 +78,14 @@ const UserHeader = ({user}) => {
         //console.log(window);
         navigator.clipboard.writeText(currUrl).then(() => {
             
-            toast({
-          title: 'URL copied',
-          description: "Profile link copied to clipboard.",
-          status: 'success',
-          duration: 3000,
-          isClosable: true,
-        })
+        //     toast({
+        //   title: 'URL copied',
+        //   description: "Profile link copied to clipboard.",
+        //   status: 'success',
+        //   duration: 3000,
+        //   isClosable: true,
+        // })
+            console.log("URL copied to clipboard");
             
         })
         

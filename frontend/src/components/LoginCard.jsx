@@ -30,7 +30,7 @@ export default function SignupCard() {
   const setAuthScreen = useSetRecoilState(authScreenAtom);
   const setUser = useSetRecoilState(userAtom);
   const [loading, setLoading] = useState(false);
-  const toast = useToast()
+  //const toast = useToast()
   const [input, setInput] = useState({
     username: "",
     password: "" 
@@ -51,12 +51,8 @@ export default function SignupCard() {
       const data = await res.json();
 
       if(data.error){
-        toast({
-          title: "Error in Login",
-          description: "Error in logging in, please check your credentials",
-          isClosable: true,
-          status: "error"
-        })
+        console.log(error in login);
+        
         
       }else{
         localStorage.setItem("user-threads", JSON.stringify(data));

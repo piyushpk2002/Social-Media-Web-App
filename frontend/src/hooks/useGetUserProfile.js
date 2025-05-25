@@ -16,6 +16,7 @@ const useGetUserProfile = () => {
             console.log("data: ", data);
 
             if(data.error){
+                console.log("error in fetching user profile");
                 // toast({
                 //     title: "Error",
                 //     description: "error in fetching user",

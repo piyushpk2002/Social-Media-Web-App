@@ -12,7 +12,7 @@ import postAtom from '../../atoms/postAtom'
 const UserPage = () => {
 
   const {user, loading} = useGetUserProfile();
-  const toast = useToast();
+  //const toast = useToast();
   
   const [userPosts, setUserPosts] = useRecoilState(postAtom);
   //useParams helps us to extract param values from the url which in our case is the username

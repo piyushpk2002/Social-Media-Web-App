@@ -15,7 +15,7 @@ import postAtom from '../../atoms/postAtom'
 const Post = ({post, postedBy}) => {
 
     const [liked, setLiked] = useState(false)
-    const toast = useToast();
+    //const toast = useToast();
     const [user, setUser] = useState(null);
     const navigate = useNavigate();
     const currentUser = useRecoilValue(userAtom);
@@ -33,23 +33,27 @@ const Post = ({post, postedBy}) => {
                // console.log("data: ", data);
 
                 if(data.error){
-                    toast({
-                        title: "Error",
-                        description: "error in fetching user",
-                        isClosable: true,
-                        status: "error"
-                    })
+                    // toast({
+                    //     title: "Error",
+                    //     description: "error in fetching user",
+                    //     isClosable: true,
+                    //     status: "error"
+                    // })
+                    console.log("error in fetching user profile");
+                    
                     return;
                 }
                 setUser(data);
                 
             } catch (error) {
-                toast({
-                    title: "Error",
-                    description: "error in fetching user",
-                    isClosable: true,
-                    status: "error"
-                })
+                // toast({
+                //     title: "Error",
+                //     description: "error in fetching user",
+                //     isClosable: true,
+                //     status: "error"
+                // })
+                console.log("error in fetching user profile");
+                
                 setUser(null)
             }
         }
@@ -79,35 +83,32 @@ const Post = ({post, postedBy}) => {
             console.log(data);
 
             if(data.error){
-                toast({
-                    title: "Error",
-                    description: "Error in deleting post",
-                    isClosable: true,
-                    status: "error"
-                })
+                // 
+                console.log("error in deleting post");
+                
                 return;
             }
 
             setPosts(posts.filter((p) => post._id !== p._id))
 
-            toast({
-                title: "Successfully Deleted",
-                description: "Post Deleted Successfully",
-                isClosable: true,
-                status: "success"
-            })
+            // toast({
+            //     title: "Successfully Deleted",
+            //     description: "Post Deleted Successfully",
+            //     isClosable: true,
+            //     status: "success"
+            // })
 
             //navigate(`/${user.username}`)
             
         } catch (error) {
             console.log(error);
             
-            toast({
-                title: "Error",
-                description: "error in deleting post",
-                isClosable: true,
-                status: "error"
-            })
+            // toast({
+            //     title: "Error",
+            //     description: "error in deleting post",
+            //     isClosable: true,
+            //     status: "error"
+            // })
         }
     }
 
