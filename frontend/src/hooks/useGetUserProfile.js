@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import { useParams } from 'react-router-dom'
 import { useToast } from '@chakra-ui/react'
-import { set } from 'mongoose'
 
 const useGetUserProfile = () => {
   const [user, setUser] = useState(null)
