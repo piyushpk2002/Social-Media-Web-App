@@ -9,7 +9,7 @@ export default defineConfig({
     // get rid of cors error 
     proxy: {
       "/api": {
-        target: "http://localhost:5000",
+        target: "https://social-media-web-app-ldnu.onrender.com",
         changeOrigin: true,
         secure: false //for http and for https secure: true
       }
