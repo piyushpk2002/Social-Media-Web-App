@@ -8,7 +8,7 @@ const generateTokensAndSetCookie = (userId, res) =>{
     res.cookie("jwt", token, {
         httpOnly: true, //This cookie cannot be accessed by browser
         maxAge : 15 * 24 * 60 * 60 * 1000, //15 days
-        sameSite: "strict", //CSRF
+        sameSite: "none" // for prod. && //"strict", for localhost //CSRF
     })
 
     return token;
