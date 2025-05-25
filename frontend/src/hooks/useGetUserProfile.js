@@ -11,7 +11,8 @@ const useGetUserProfile = () => {
   useEffect(() => {
     const getUser = async () => {
         try {
-            const res = await fetch(`${import.meta.env.VITE_API_URL}/api/users/getProfile/${username}`);
+            const res = await fetch(`${import.meta.env.VITE_API_URL}/api/users/getProfile/${username}`, 
+                {credentials: "include"});
             const data = await res.json();
             console.log("data: ", data);
 
