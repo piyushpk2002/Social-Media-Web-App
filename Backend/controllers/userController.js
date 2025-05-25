@@ -8,7 +8,7 @@ import mongoose from "mongoose";
 
 const getProfile = async (req, res) => {
 
-    const {query} = await req.params;
+    const {query} = req.params;
    //console.log(query);
     
     let user;
@@ -16,7 +16,7 @@ const getProfile = async (req, res) => {
         if(mongoose.Types.ObjectId.isValid(query)){
             user = await User.findOne({_id: query}).select("-password -updatedAt");
         }else{
-            user = await User.findOne({username: query}).select("-password -updateAt");
+            user = await User.findOne({username: query}).select("-password -updatedAt");
         }
 
          

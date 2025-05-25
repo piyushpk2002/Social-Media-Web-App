@@ -6,6 +6,8 @@ const useGetUserProfile = () => {
   const [user, setUser] = useState(null)
   const [loading, setLoading] = useState(true)
   const {username} = useParams(); 
+  console.log(username);
+  
   //const toast = useToast();
 
   useEffect(() => {
@@ -43,7 +45,7 @@ const useGetUserProfile = () => {
         setLoading(false);
     }
 
-   //console.log("user", user);
+   console.log("user", user);
     getUser();
   }, [username])
   
