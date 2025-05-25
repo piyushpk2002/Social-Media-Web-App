@@ -26,14 +26,14 @@ const Post = ({post, postedBy}) => {
 
         const getUser = async () => {
             try {
-                const res = await fetch("/api/users/getProfile/" + postedBy);
+                const res = await fetch(`${import.meta.env.VITE_API_URL}/api/users/getProfile/` + postedBy);
                 const data = await res.json();
                // console.log("data: ", data);
 
                 if(data.error){
                     toast({
                         title: "Error",
-                        description: error,
+                        description: "error in fetching user",
                         isClosable: true,
                         status: error
                     })
@@ -44,7 +44,7 @@ const Post = ({post, postedBy}) => {
             } catch (error) {
                 toast({
                     title: "Error",
-                    description: error,
+                    description: "error in fetching user",
                     isClosable: true,
                     status: error
                 })
@@ -65,7 +65,7 @@ const Post = ({post, postedBy}) => {
     
 
         try {
-            const res = await fetch("/api/posts/delete/" + post._id, {
+            const res = await fetch(`${import.meta.env.VITE_API_URL}/api/posts/delete/` + post._id, {
                 method: "DELETE",
                 headers: {
                     "Content-Type": "application/json"
