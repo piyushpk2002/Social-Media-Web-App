@@ -17,7 +17,7 @@ const HomePage = () => {
       setFeedPosts([])
       setLoading(true)
       try {
-        const res = await fetch("/api/posts/feed", {
+        const res = await fetch(`${import.meta.env.VITE_API_URL}/api/posts/feed`, {
           method: "GET",
           header: {
             "Content-Type": "application/json"
@@ -32,7 +32,7 @@ const HomePage = () => {
         if(data.error){
           toast({
             title: "Error",
-            description: data.error,
+            description: "Error in fetching feed Posts",
             status: "error",
             isClosable: true
           })

@@ -49,12 +49,12 @@ export default function SignupCard() {
       const data = await res.json();
 
       if(data.error){
-        // toast({
-        //   title: "Error in Login",
-        //   description: data.error.message,
-        //   isClosable: true,
-        //   status: "error"
-        // })
+        toast({
+          title: "Error in Login",
+          description: "Error in logging in, please check your credentials",
+          isClosable: true,
+          status: "error"
+        })
         
       }else{
         localStorage.setItem("user-threads", JSON.stringify(data));
