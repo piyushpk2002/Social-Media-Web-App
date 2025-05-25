@@ -47,12 +47,12 @@ const UserHeader = ({user}) => {
                 const data = await res.json();
 
                 if(data.error){
-                    toast({
-                        title: "Error",
-                        description: "Error in following/unfollowing user",
-                        status: "error" ,
-                        isClosable: true
-                    })
+                    // toast({
+                    //     title: "Error",
+                    //     description: "Error in following/unfollowing user",
+                    //     status: "error" ,
+                    //     isClosable: true
+                    // })
                     return
                 }
                 
@@ -63,10 +63,10 @@ const UserHeader = ({user}) => {
                 console.log(error);
                 
                 toast({
-                    title: "Error",
-                    description: "error",
-                    status: "error",
-                    isClosable: true
+                    // title: "Error",
+                    // description: "error",
+                    // status: "error",
+                    // isClosable: true
                 })
             }finally {setUpdating(false)}
     }
