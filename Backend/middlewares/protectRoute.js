@@ -3,6 +3,8 @@ import User from '../models/userModel.js'
 
 const protectRoute = async (req, res, next) => {
     try {
+        console.log("protectRoute middleware called");
+        
         const token = req.cookies.jwt //remeber the name you provided during setting cookie and jwt should be same
     
         if(!token){
