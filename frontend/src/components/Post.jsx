@@ -37,7 +37,7 @@ const Post = ({post, postedBy}) => {
                         title: "Error",
                         description: "error in fetching user",
                         isClosable: true,
-                        status: error
+                        status: "error"
                     })
                     return;
                 }
@@ -48,7 +48,7 @@ const Post = ({post, postedBy}) => {
                     title: "Error",
                     description: "error in fetching user",
                     isClosable: true,
-                    status: error
+                    status: "error"
                 })
                 setUser(null)
             }
