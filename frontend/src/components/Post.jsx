@@ -78,7 +78,7 @@ const Post = ({post, postedBy}) => {
             if(data.error){
                 toast({
                     title: "Error",
-                    description: data.error,
+                    description: "Error in deleting post",
                     isClosable: true,
                     status: "error"
                 })

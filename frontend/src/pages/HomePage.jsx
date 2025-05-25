@@ -44,7 +44,7 @@ const HomePage = () => {
       } catch (error) { 
         toast({
           title: "Error",
-          description: error,
+          description: "error in fetching feed posts",
           status: "error",
           isClosable: true
         })
