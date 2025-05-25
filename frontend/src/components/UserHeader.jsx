@@ -5,13 +5,13 @@ import { Link } from 'react-router-dom'
 import { BsInstagram } from 'react-icons/bs'
 import { CgMoreO } from 'react-icons/cg'
 import { Portal, MenuList, MenuItem } from '@chakra-ui/react'
-import { useToast } from '@chakra-ui/react'
+//import { useToast } from '@chakra-ui/react'
 import { useRecoilValue } from 'recoil'
 import userAtom from '../../atoms/userAtom'
 
 const UserHeader = ({user}) => {
 
-    const toast = useToast();
+    //const toast = useToast();
     const currentUser = useRecoilValue(userAtom);
     // console.log("current: ", currentUser[0]._id);
     //console.log("user: ", user.followers.includes(currentUser[0]._id));

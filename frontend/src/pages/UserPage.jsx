@@ -60,7 +60,8 @@ const UserPage = () => {
 
   }, [username, setUserPosts])
 
-
+  console.log(user);
+  
   if(!user && loading){
     return (<Flex justifyContent = {"center"} ><Spinner size = {"xl"}></Spinner></Flex>)
   }
