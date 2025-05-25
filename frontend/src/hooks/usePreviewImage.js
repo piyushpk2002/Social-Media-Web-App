@@ -4,7 +4,7 @@ import { useState } from 'react'
 
 const usePreviewImage = () => {
   const [imgUrl, setUrl] = useState(null);
-  const toast = useToast()
+  //const toast = useToast()
 
   const handleFileChange = (e) => {
     const file = e.target.files[0];
@@ -19,12 +19,12 @@ const usePreviewImage = () => {
       reader.readAsDataURL(file);
     }else{
       
-      toast({
-        title: "Error",
-        description: "Error in image preview",
-        status: "error",
-        isClosable: true
-      })
+      // toast({
+      //   title: "Error",
+      //   description: "Error in image preview",
+      //   status: "error",
+      //   isClosable: true
+      // })
       setUrl(null)
 
     }
