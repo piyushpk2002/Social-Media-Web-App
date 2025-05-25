@@ -14,18 +14,18 @@ const protectRoute = async (req, res, next) => {
         if(!decodeToken){
             return res.status(401).json({message: "Unauthorized"});
         }
-        //console.log("decodeToken", decodeToken);
+        console.log("decodeToken", decodeToken);
         
     
         const user = await User.findById(decodeToken.userId)
-        //console.log(decodeToken.userId);
+        console.log(decodeToken.userId);
         
-        //console.log("user", user);
+        console.log("user", user);
         
         if(!user){
             return res.status(401).json({message: "Unauthorized"})
         }
-        //console.log(user);
+        console.log(user);
         
 
         req.user = user;
