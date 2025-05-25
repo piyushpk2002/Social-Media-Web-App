@@ -42,12 +42,12 @@ const UserPage = () => {
           
         } catch (error) {
 
-          toast({
-              // title: "Error",
-              // description: "Error in fetching user posts",
-              // isClosable: true,
-              // status: "error"
-            })
+          // toast({
+          //     // title: "Error",
+          //     // description: "Error in fetching user posts",
+          //     // isClosable: true,
+          //     // status: "error"
+          //   })
 
         }
       }
