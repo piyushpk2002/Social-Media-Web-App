@@ -75,6 +75,7 @@ const PostPage = () => {
     try {
         const res = await fetch("/api/posts/delete/" + currentPost._id, {
             method: "DELETE",
+            credentials: "include", // This is important to send cookies with the request
             headers: {
                 "Content-Type": "application/json"
             }
