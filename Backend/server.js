@@ -2,6 +2,7 @@ import express from 'express';
 import dotenv from 'dotenv';
 import connectDB from './db/connectDB.js';
 import cookieParser from 'cookie-parser';
+import cors from 'cors';
 
 import userRoutes from './routes/userRoutes.js';
 import postRoutes from './routes/postRoutes.js';
