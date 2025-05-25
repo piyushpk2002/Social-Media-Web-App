@@ -17,6 +17,12 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 //middlewares
+app.use(cors({
+  origin: "https://social-media-qtxc.onrender.com", 
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true // optional: only if you're using cookies/sessions
+}));
+
 app.use(express.json({limit: "50mb"})); // to parse json data from req.body // without limit while creating a post it gives erro payload is too large
 app.use(express.urlencoded({extended: true})); // to parse form data in the req.body
 app.use(cookieParser()) // to parse cookies from req.headers.cookie
