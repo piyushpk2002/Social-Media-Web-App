@@ -11,7 +11,7 @@ const useGetUserProfile = () => {
   useEffect(() => {
     const getUser = async () => {
         try {
-            const res = await fetch(`/api/users/getProfile/${username}`);
+            const res = await fetch(`${import.meta.env.VITE_API_URL}/api/users/getProfile/${username}`);
             const data = await res.json();
            // console.log("data: ", data);
 
@@ -20,18 +20,20 @@ const useGetUserProfile = () => {
                     title: "Error",
                     description: "error in fetching user",
                     isClosable: true,
-                    status: error
+                    status: "error"
                 })
                 return;
             }
             setUser(data);
             
         } catch (error) {
+            console.log("error in fetching user profile");
+            
             toast({
                 title: "Error",
                 description: "error in fetching user",
                 isClosable: true,
-                status: error
+                status:"error"
             })
             setUser(null)
         }
