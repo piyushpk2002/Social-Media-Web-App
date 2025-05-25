@@ -26,7 +26,9 @@ const Post = ({post, postedBy}) => {
 
         const getUser = async () => {
             try {
-                const res = await fetch(`${import.meta.env.VITE_API_URL}/api/users/getProfile/` + postedBy);
+                const res = await fetch(`${import.meta.env.VITE_API_URL}/api/users/getProfile/` + postedBy,
+                    {credentials: "include"}
+                );
                 const data = await res.json();
                // console.log("data: ", data);
 
@@ -67,6 +69,7 @@ const Post = ({post, postedBy}) => {
         try {
             const res = await fetch(`${import.meta.env.VITE_API_URL}/api/posts/delete/` + post._id, {
                 method: "DELETE",
+                credentials: "include", // This is important to send cookies with the request
                 headers: {
                     "Content-Type": "application/json"
                 }
@@ -101,7 +104,7 @@ const Post = ({post, postedBy}) => {
             
             toast({
                 title: "Error",
-                description: error,
+                description: "error in deleting post",
                 isClosable: true,
                 status: "error"
             })

@@ -8,6 +8,7 @@ import useGetUserProfile from '../hooks/useGetUserProfile'
 import { useRecoilState } from 'recoil'
 import postAtom from '../../atoms/postAtom'
 
+
 const UserPage = () => {
 
   const {user, loading} = useGetUserProfile();
@@ -24,7 +25,8 @@ const UserPage = () => {
             credentials: "include"
           });
           const data = await res.json();
-
+          console.log(data);
+          
 
           if(data.error){
             toast({
