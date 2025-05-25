@@ -5,7 +5,7 @@ const protectRoute = async (req, res, next) => {
     try {
         console.log("protectRoute middleware called");
         
-        const token = req.Cookies.jwt //remeber the name you provided during setting cookie and jwt should be same
+        const token = req.cookies.jwt //remeber the name you provided during setting cookie and jwt should be same
         console.log("token", token);
         
         if(!token){
