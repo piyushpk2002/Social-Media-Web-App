@@ -47,8 +47,9 @@ function Actions({ post }) {
 		}
 
 		try {
-			const res = await fetch("/api/posts/like/" + post._id, {
+			const res = await fetch(`${import.meta.env.VITE_API_URL}/api/posts/like/` + post._id, {
 				method: "PUT",
+				credentials: "include", // This is important to send cookies with the request
 				headers: {
 					"Content-Type": "application/json"
 				}
@@ -121,8 +122,9 @@ function Actions({ post }) {
 		}
 
 		try {
-			const res = await fetch("/api/posts/reply/" + post._id, {
+			const res = await fetch(`${import.meta.env.VITE_API_URL}/api/posts/reply/` + post._id, {
 				method: "PUT",
+				credentials: "include",
 				headers: {
 					"Content-Type": "application/json"
 				},

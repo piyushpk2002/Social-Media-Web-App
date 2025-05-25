@@ -20,14 +20,16 @@ const UserPage = () => {
 
       const getUserPosts = async () =>{
         try {
-          const res = await fetch("/api/posts/getUserPosts/" + username);
+          const res = await fetch(`${import.meta.env.VITE_API_URL}/api/posts/getUserPosts/` + username, {
+            credentials: "include"
+          });
           const data = await res.json();
 
 
           if(data.error){
             toast({
               title: "Error",
-              description: data.error,
+              description: "Error in fetching user posts",
               isClosable: true,
               status: "error"
             })
@@ -40,7 +42,7 @@ const UserPage = () => {
 
           toast({
               title: "Error",
-              description: data.error,
+              description: "Error in fetching user posts",
               isClosable: true,
               status: "error"
             })

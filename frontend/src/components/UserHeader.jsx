@@ -37,8 +37,9 @@ const UserHeader = ({user}) => {
             setUpdating(true);
 
             try {
-                const res = await fetch(`/api/users/follow/${user._id}`, {
+                const res = await fetch(`${import.meta.env.VITE_API_URL}/api/users/follow/${user._id}`, {
                     method: "POST",
+                    credentials: "include", // This is important to send cookies with the request
                     headers: {
                         "Content-Type": "application/json"
                     },
@@ -48,7 +49,7 @@ const UserHeader = ({user}) => {
                 if(data.error){
                     toast({
                         title: "Error",
-                        description: data.error,
+                        description: "Error in following/unfollowing user",
                         status: error,
                         isClosable: true
                     })

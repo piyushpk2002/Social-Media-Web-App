@@ -40,7 +40,7 @@ export default function SignupCard() {
         console.log(input);
 
         try {
-            const res = await fetch("/api/users/signup", {
+            const res = await fetch(`${import.meta.env.VITE_API_URL}/api/users/signup`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -53,7 +53,7 @@ export default function SignupCard() {
                 
                 toast({
                     title: "Error",
-                    description: data.error,
+                    description: "Error in signing up",
                     duration: 3000,
                     status: "error",
                     isClosable: true
@@ -66,7 +66,7 @@ export default function SignupCard() {
                 setUser(data)
                 toast({
                     title: "Account Created",
-                    description: data.message,
+                    description: "Account created successfully",
                     isClosable: true,
                     duration: 3000,
                     status: "success"

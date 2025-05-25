@@ -30,14 +30,16 @@ const PostPage = () => {
     const getPost = async () => {
       SetPost([])
       try {
-        const res = await fetch(`/api/posts/${pid}`)
+        const res = await fetch(`${import.meta.env.VITE_API_URL}/api/posts/${pid}`,{
+          credentials: "include"
+        })
         const data = await res.json();
         //console.log(data);
 
         if (data.error) {
           toast({
             title: "Error",
-            description: data.error,
+            description: "Error in fetching post",
             status: "error",
             isClosable: true
           })
@@ -51,7 +53,7 @@ const PostPage = () => {
 
         toast({
           title: "Error",
-          description: error,
+          description: "error in fetching post",
           status: "error",
           isClosable: true
         })

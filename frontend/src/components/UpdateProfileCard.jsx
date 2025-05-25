@@ -55,8 +55,9 @@ export default function UserProfileEdit() {
     //console.log("inside handleSubmit");
     
     try {
-      const res = await fetch(`/api/users/update/${user._id}`, {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/api/users/update/${user._id}`, {
         method: "PUT",
+        credentials: "include", // This is important to send cookies with the request
         headers: {
           "Content-Type": "Application/json"
       },
@@ -68,7 +69,7 @@ export default function UserProfileEdit() {
     if(data.error){
       toast({
         title: "Error",
-        description: data.error,
+        description: "Error in updating profile",
         isClosable: true,
         status: "error"
       })
@@ -87,7 +88,7 @@ export default function UserProfileEdit() {
 
       toast({
         title: "Error",
-        description: data.error,
+        description: "Error in updating profile",
         isClosable: true,
         status: "error"
       })

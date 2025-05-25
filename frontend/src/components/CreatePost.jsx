@@ -55,8 +55,9 @@ const CreatePost = () => {
       setLoading(true);
 
        try {
-          const res = await fetch("/api/posts/create", {
+          const res = await fetch(`${import.meta.env.VITE_API_URL}/api/posts/create`, {
             method: "POST",
+            credentials: "include", // This is important to send cookies with the request
             headers: {
               "Content-Type": "application/json"
             },
@@ -68,7 +69,7 @@ const CreatePost = () => {
           if(data.error){
             toast({
               title: "Error",
-              description: data.error,
+              description: "Error in creating post",
               isClosable: true,
               status: "error"
             })

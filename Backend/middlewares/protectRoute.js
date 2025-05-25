@@ -3,10 +3,10 @@ import User from '../models/userModel.js'
 
 const protectRoute = async (req, res, next) => {
     try {
-        console.log("protectRoute middleware called");
+        //console.log("protectRoute middleware called");
         
         const token = req.cookies.jwt //remeber the name you provided during setting cookie and jwt should be same
-        console.log("token", token);
+       // console.log("token", token);
         
         if(!token){
             return res.statue(401).json({message: 'Unauthorized'})
@@ -17,18 +17,18 @@ const protectRoute = async (req, res, next) => {
         if(!decodeToken){
             return res.status(401).json({message: "Unauthorized"});
         }
-        console.log("decodeToken", decodeToken);
+        //console.log("decodeToken", decodeToken);
         
     
         const user = await User.findById(decodeToken.userId)
         console.log(decodeToken.userId);
         
-        console.log("user", user);
+        //console.log("user", user);
         
         if(!user){
             return res.status(401).json({message: "Unauthorized"})
         }
-        console.log(user);
+       // console.log(user);
         
 
         req.user = user;
