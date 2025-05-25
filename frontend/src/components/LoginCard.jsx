@@ -51,7 +51,7 @@ export default function SignupCard() {
       if(data.error){
         toast({
           title: "Error in Login",
-          description: data.error,
+          description: data.error.message,
           isClosable: true,
           status: "error"
         })
