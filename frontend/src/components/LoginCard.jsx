@@ -61,7 +61,7 @@ export default function SignupCard() {
         setUser(data);
       }
     } catch (error) {
-      console.log(error);
+      console.log(error.message);
     }finally {setLoading(false)}
   }
 
