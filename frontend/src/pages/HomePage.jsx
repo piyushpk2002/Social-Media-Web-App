@@ -21,7 +21,8 @@ const HomePage = () => {
           method: "GET",
           header: {
             "Content-Type": "application/json"
-          }
+          },
+          credentials: "include" // This is important to send cookies with the request
         })
   
         //console.log(res);
